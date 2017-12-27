@@ -1,0 +1,39 @@
+
+{% extends 'portal/base.html' %}
+
+{% block container %}
+
+<h1>第三方微信公众号接入</h1>
+
+<h2>微信管理员授权</h2>
+
+<a href="{{ auth_url }}">打开授权页面</a>
+
+{% if auth_wechat_qs %}
+
+<h2>已授权服务号列表</h2>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th class="text-center col-xs-1">头像</th>
+      <th class="text-center col-xs-2">原始ID</th>
+      <th class="text-center col-xs-3">昵称</th>
+      <th class="text-center col-xs-3">主体信息</th>
+      <th class="text-center col-xs-3">接入状态</th>
+    </tr>
+  </thead>
+  {% for auth_wechat in auth_wechat_qs %}
+  <tr>
+    <td class="text-center"><img class="wechat-logo" src="{{ auth_wechat.head_img }}"</td>
+    <td>{{ auth_wechat.user_name }}</td>
+    <td>{{ auth_wechat.nick_name}}</td>
+    <td>{{ auth_wechat.principal_name }}</td>
+    <td></td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endif %}
+
+{% endblock %}
