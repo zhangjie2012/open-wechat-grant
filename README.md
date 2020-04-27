@@ -1,6 +1,6 @@
 # 微信第三方平台开发：授权流程
 
-说明文章见：<http://www.zhangjiee.com/blog/wechat-open-grant>
+说明文章见：https://www.zhangjiee.com/blog/2017/wechat-open-grant.html
 
 运行环境：
 
